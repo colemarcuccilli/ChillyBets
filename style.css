@@ -272,12 +272,21 @@ section {
     margin: 0 1rem;
     display: inline-block;
   }
+  .partners-logos {
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center them horizontally */
+    align-items: center; /* Align vertically */
+    gap: 2rem; /* Space between logos */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
   
   .partners-logos img {
-    width: 100px;
-    height: auto;
-    opacity: 0.8;
-    transition: transform 0.3s, opacity 0.3s;
+    height: auto; /* Set consistent height */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 150px;
+    object-fit: contain; /* Ensure the entire image fits within the dimensions */
+    margin: 0; /* Remove any default margins */
+    display: block; /* Avoid inline spacing issues */
   }
   
   .partners-logos img:hover {
@@ -541,4 +550,160 @@ section {
     25%, 45% { transform: translateX(-100%); }
     50%, 70% { transform: translateX(-200%); }
     75%, 100% { transform: translateX(-300%); }
+  }
+
+  /* Footer Styles */
+.site-footer {
+    background: #1a3f66; /* Deep Blue */
+    color: #ffffff; /* White Text */
+    padding: 3rem 1rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Footer Content */
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-about h3,
+  .footer-links h3,
+  .footer-social h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #00a5ff; /* Light Blue for headings */
+  }
+  
+  .footer-about p {
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  
+  /* Quick Links */
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #00a5ff;
+  }
+  
+  /* Social Links */
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #2a4f7a;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #bbb;
+  }
+
+  /* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    background-color: #f9fcff;
+  }
+  
+  .tos-header {
+    background-color: #1a3f66;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .tos-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .tos-header p {
+    margin: 0.5rem 0 0;
+  }
+  
+  .tos-content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .tos-content h2 {
+    color: #00a5ff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tos-content ul {
+    margin-left: 1.5rem;
+  }
+  
+  .tos-content a {
+    color: #ff3366;
+    text-decoration: none;
+  }
+  
+  .tos-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .site-footer {
+    text-align: center;
+    background-color: #1a3f66;
+    color: white;
+    padding: 1rem;
+  }
+
+  /* Stylish Highlights */
+.stylish-pink {
+    color: #ff3366; /* Pink */
+    font-weight: bold;
+    font-size: 1.2em; /* Slightly larger */
+  }
+  
+  .stylish-blue {
+    color: #00a5ff; /* Blue */
+    font-weight: bold;
+    font-size: 1.2em; /* Slightly larger */
+  }
+  
+  .stylish-gradient {
+    background: linear-gradient(to right, #ff3366, #00a5ff);
+    -webkit-background-clip: text;
+    color: transparent; /* Gradient text effect */
+    font-weight: bold;
   }
