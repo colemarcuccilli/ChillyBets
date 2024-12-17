@@ -7,25 +7,9 @@
 section {
     padding: 4rem 1rem;
     background: transparent;
+    z-index: 2;
   }
-  
-  /* Adjust Specific Sections to Transition Smoothly */
-  .pricing-plans, 
-  .community-reviews, 
-  .research-teamwork {
-    background: linear-gradient(to bottom, #ffffff, #0c4764);
-  }
-  
-  /* Add a Top and Bottom Gradient to Create Flow */
-  .partners-section,
-  .success-metrics {
-    background: linear-gradient(to bottom, #86d7ff, #ffffff);
-  }
-  
-  /* Winning Tickets Section Gradient */
-  .winning-tickets {
-    background: linear-gradient(to bottom, #ffffff, #86d7ff);
-  }
+
   
   /* Footer Gradient Transition */
   .site-footer {
@@ -34,15 +18,7 @@ section {
     text-align: center;
     padding: 2rem 1rem;
   }
-  
-  /* Ensure Smooth Transition for Content */
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(to bottom, #e6f7ff, #ffffff, #e6f7ff);
-    background-attachment: fixed; /* Ensures smooth flow */
-}
+
   
   h2, p {
     margin: 0 0 1rem;
@@ -200,45 +176,92 @@ section {
     margin-top: 0.5rem;
   }
   
-  /* Snowflake Animation */
-  #snowflakes {
+/* Enhanced Snowflakes */
+#snowflakes {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     pointer-events: none;
-    z-index: -1;
+    z-index: 3;
     overflow: hidden;
   }
   
   .snowflake {
-    position: absolute;
-    top: -10%; /* Start slightly above */
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
-    animation: fall linear infinite;
+    position: fixed;
+    color: white !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+    animation: snowfall linear infinite;  /* Remove duplicate animation declarations */
+    z-index: 3;
 }
-  
-  .snowflake::before {
-    content: "❄";
+.snowflake.small {
+    font-size: 14px;
+}
+
+.snowflake.medium {
     font-size: 20px;
-    color: #a3d9ff;
-  }
-  
-  .snowflake {
-    animation: fall linear infinite;
-  }
-  
-  @keyframes fall {
+}
+
+.snowflake.large {
+    font-size: 26px;
+}
+
+/* Remove any duplicate @keyframes and keep only one */
+@keyframes snowfall {
     0% {
-        transform: translateY(-10vh);
+        transform: translateY(-10vh) translateX(-20px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
     }
     100% {
-        transform: translateY(110vh); /* Ends below the viewport */
+        transform: translateY(110vh) translateX(20px) rotate(360deg);
+        opacity: 0;
     }
 }
+  /* Ice skate marks */
+  .skate-mark {
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .deep-mark {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+  }
+  
+  .surface-mark {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+  
+  .double-mark::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: inherit;
+    opacity: 0.7;
+  }
+  
+  /* Ensure sections remain visible */
+  section {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+  }
+
   .section-light {
     background: linear-gradient(to bottom, #e6f7ff, #ffffff);
   }
@@ -571,7 +594,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
   }
   
   .footer-about h3,
@@ -633,14 +656,47 @@ section {
   }
 
   /* General Page Styling */
+/* Merge this with your existing body style */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     color: #333;
-    background-color: #f9fcff;
+    background-color: #75a8e0;  /* Changed from #f9fcff to match ice theme */
+    position: relative;
   }
   
+  /* Add this new ::before pseudo-element to your body */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+      /* Frost clouds */
+      radial-gradient(
+        ellipse at 30% 20%,
+        rgba(255, 255, 255, 0.4) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 70% 60%,
+        rgba(255, 255, 255, 0.3) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 40% 80%,
+        rgba(255, 255, 255, 0.35) 0%,
+        transparent 40%
+      ),
+      /* Base gradient */
+      linear-gradient(180deg,
+        #75a8e0 0%,
+        #8abbe8 50%,
+        #75a8e0 100%
+      );
+    z-index: -2;
+  }
+
   .tos-header {
     background-color: #1a3f66;
     color: white;
@@ -707,3 +763,12 @@ body {
     color: transparent; /* Gradient text effect */
     font-weight: bold;
   }
+
+  /* Ice marks container */
+.marks-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
