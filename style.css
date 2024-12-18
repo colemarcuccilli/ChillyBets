@@ -17,6 +17,7 @@ section {
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+    z-index: 3;
   }
 
   
@@ -635,6 +636,7 @@ section {
     padding: 3rem 1rem 1rem;
     font-size: 0.9rem;
     line-height: 1.5;
+    z-index: 3;
   }
   
   .footer-container {
@@ -711,7 +713,8 @@ section {
   /* General Page Styling */
 /* Merge this with your existing body style */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Bungee Shade', 'Anton', Impact, sans-serif;
+    font-weight: 700; /* Bold */
     line-height: 1.6;
     margin: 0;
     color: #333;
