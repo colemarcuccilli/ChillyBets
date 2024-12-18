@@ -66,6 +66,11 @@ section {
     margin-right: 0.5rem;
 }
 
+.logo-2 {
+    height: 100px;
+
+}
+
 .nav-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -163,11 +168,43 @@ section {
     margin-top: 2rem;
   }
   
-  .stars {
+/* Gold Stars with Shimmer Effect */
+.stars {
     font-size: 2rem;
-    color: #ff3366;
+    color: #FFD700; /* Change from pink to gold */
     letter-spacing: 0.1rem;
-  }
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(
+        to right,
+        #FFD700 0%,
+        #FFF8DC 20%,
+        #FFD700 40%,
+        #FFD700 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+
+/* Add a subtle glow */
+.stars {
+    text-shadow: 
+        0 0 5px rgba(255, 215, 0, 0.3),
+        0 0 10px rgba(255, 215, 0, 0.2);
+}
   
   .reviews-link {
     color: #00a5ff;
@@ -286,7 +323,8 @@ section {
   
   /* Partners Section */
   .partners-section {
-    padding: 2rem 0;
+    padding: 1rem 0;
+    margin-bottom: 0;
     background: none;
     text-align: center;
   }
@@ -319,7 +357,7 @@ section {
   
   /* Success Metrics */
   .success-metrics {
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
     background: transparent;
     text-align: center;
   }
@@ -386,34 +424,54 @@ section {
   .research-text {
     margin-bottom: 2rem;
   }
+
   
-  .teamwork-content {
+/* Updated mockup styles */
+.phone-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.discord-ipad {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.discord-phone {
+    position: absolute;
+    width: 35%; /* Adjust based on your needs */
+    right: -5%; /* Creates overlap on the right side */
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+/* Adjust container spacing */
+.teamwork-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    max-width: 900px;
+    gap: 1rem;
+    max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* Phone Mockup */
-  .phone-mockup {
-    background: transparent;
-    border-radius: 25px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    width: 300px;
-  }
-  
-  .phone-image {
-    width: 100%;
-    display: block;
-  }
-  
-  /* Teamwork Text */
-  .teamwork-text {
+    padding: 0 20px;
+}
+
+/* Ensure text stays below images */
+.teamwork-text {
     text-align: center;
-  }
+    z-index: 3;
+}
+
   
   .teamwork-heading {
     font-size: 1.8rem;
@@ -429,7 +487,7 @@ section {
   /* Pricing Plans Section */
 .pricing-plans {
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     background: transparent;
   }
   
@@ -517,12 +575,7 @@ section {
     background: transparent;
   }
   
-  .reviews-stars {
-    font-size: 2rem;
-    color: #ff3366;
-    margin: 1rem 0;
-  }
-  
+
   .reviews-slider {
     display: flex;
     overflow: hidden;
