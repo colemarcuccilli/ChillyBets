@@ -40,7 +40,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 2rem;
+    padding: 0rem 2rem;
     position: sticky;
     top: 0;
     background: rgba(230, 247, 255, 0.9);
@@ -63,7 +63,7 @@ section {
 }
 
 .nav-logo {
-    height: 40px;
+    height: 100px;
     margin-right: 0.5rem;
 }
 
@@ -607,7 +607,7 @@ section {
   }
   
   .review-slide {
-    flex: 0 0 75%;
+    flex: 0 0 35%;
     background: white;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -666,7 +666,7 @@ section {
     padding: 3rem 1rem 1rem;
     font-size: 0.9rem;
     line-height: 1.5;
-    z-index: 3;
+    z-index: 8;
   }
   
   .footer-container {
@@ -854,7 +854,8 @@ body {
 .marks-container {
     position: fixed;
     inset: 0;
-    z-index: 1;
+    z-index: 7;
     pointer-events: none;
+    clip-path: inset(0 0 400px 0);
   }
   
