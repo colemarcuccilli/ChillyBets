@@ -13,15 +13,22 @@
   <div id="snowflakes"></div>
 
 <!-- Navigation -->
+<!-- Only change is adding this button inside the nav-content div, right after the nav-left div -->
 <nav id="navbar">
     <div class="nav-content">
       <!-- Logo and Title -->
       <div class="nav-left">
         <img src="chillybetslogo.png" alt="Logo" class="nav-logo" />
-        <!-- <h1>Chilly Bets</h1> -->
       </div>
+      
+      <!-- Add this button here -->
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
   
-      <!-- Navigation Links -->
+      <!-- Keep existing nav-links unchanged -->
       <ul class="nav-links">
         <li><a href="#winning-tickets">Testimonials</a></li>
         <li><a href="#research-teamwork">Features</a></li>
@@ -29,10 +36,10 @@
         <li><a href="#community-reviews">Reviews</a></li>
       </ul>
   
-      <!-- Join Premium Button -->
+      <!-- Keep existing button unchanged -->
       <a href="https://dubclub.win/r/p/pri-zwszu/" target="_blank" class="btn-primary nav-right">Join Premium</a>
     </div>
-  </nav>
+</nav>
 
   <!-- Hero Section -->
   <header class="hero-section">
@@ -430,6 +437,33 @@ That Turned Losing Bettors<br>
         snowflakeContainer.appendChild(snowflake);
     }
 }
+// Add this to your existing script section
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('show');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('show');
+        }
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('show');
+        });
+    });
+});
 // Create ice skate marks
 function createSkateMarks() {
   const marksContainer = document.createElement('div');
