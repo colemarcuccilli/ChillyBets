@@ -236,7 +236,23 @@ section {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+  /* Hero Buttons */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to a new line */
+  justify-content: center;
+  gap: 1rem; /* Add space between buttons */
+  margin-top: 1.5rem;
+}
+
+/* Adjust layout for mobile screens */
+@media screen and (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center-align the buttons */
+  }
+}
+
   .hero-buttons a {
     margin: 0 0.5rem;
     padding: 0.75rem 1.5rem;
