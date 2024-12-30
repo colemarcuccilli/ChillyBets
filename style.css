@@ -11,6 +11,23 @@ section {
   }
 
   
+
+  /* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+/* Optional: For ensuring all sections fit within the viewport width */
+* {
+  box-sizing: border-box; /* Ensure padding and borders are included in element width */
+}
+
+/* Ensure the width of all elements stays within the viewport */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Disable horizontal scrolling globally */
+}
   /* Footer Gradient Transition */
   .site-footer {
     background: linear-gradient(to bottom, #e6f7ff, #1a3f66);
